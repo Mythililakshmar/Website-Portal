@@ -1,0 +1,348 @@
+* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0f7fa, #80deea); /* Blue gradient background */
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    background color: #87CEEB
+    padding-top: 100px; /* Space for fixed header */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Header */
+header {
+    background-color: #007bb5; /* Deep blue */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #80deea;
+    color: #333;
+    border-radius: 50px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    color: #e0f7fa; /* Lighter blue text */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0, 123, 181, 0.9), rgba(0, 171, 235, 0.7)), 
+                url('../images/hero-bg.jpg') center center / cover no-repeat; /* Blue gradient overlay with image */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.8em;
+    margin: 20px 0;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.hero button {
+    padding: 15px 30px;
+    background-color: #80deea; /* Light blue */
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #007bb5; /* Deep blue on hover */
+    transform: scale(1.05);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #007bb5; /* Deep blue headings */
+}
+
+.section h2::before {
+    content: '';
+    width: 100px;
+    height: 3px;
+    background-color: #80deea;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Project Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    background-color: #007bb5; /* Deep blue */
+    color: white;
+    padding: 15px;
+ font-size: 1.5em;
+    text-align: center;
+}
+
+.card p {
+    padding: 20px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Modal Popup for Projects */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bb5;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #80deea;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #007bb5;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form h2 {
+    margin-bottom: 30px;
+    color: #007bb5;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #80deea;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #007bb5;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #005f85;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #007bb5;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #80deea;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
